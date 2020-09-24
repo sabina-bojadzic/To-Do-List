@@ -1,0 +1,63 @@
+<%- include("header") -%>
+
+
+	
+<style type="text/css">
+	/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #8f6dcc;
+  overflow: hidden;
+  padding: 2px;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #A683E3 ;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #7e5bb6;
+  color: white;
+}
+</style>
+
+	<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/work">Work</a>
+  <a href="/about">About</a>
+</div> 
+
+	<div class="box" id="heading">
+	 	<h1><%= ListTitle %></h1>
+	</div>
+	
+	<div class="box">
+		<%for (var i = 0; i < newListItems.length; i++) {%>
+			<div class="item">
+			<input type="checkbox" name="" value="">
+			<p><%= newListItems[i] %></p>
+		</div>
+			<%}%>
+
+	<form class="item" action="/" method="post">
+		<input type="text" name="newItem" placeholder="New item to do" autocomplete="off">
+		<button type="submit" name="list" value=<%= ListTitle %>>+</button>
+	</form>
+</div>
+	
+<%- include("footer") -%>
